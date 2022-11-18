@@ -1,13 +1,13 @@
 const { faker } = require('@faker-js/faker');
 const signupPage = require('../pageobjects/signup.page');
 
-describe.skip('Authentication', ()=>{
+describe('Authentication', ()=>{
    //Should open the Create New Customer Account page
    beforeEach(async ()=> {
       await signupPage.open();
     });
 
-   xit('should sign up a new user', async()=>{
+   it('should sign up a new user', async()=>{
       await signupPage.signUp('Paul','Hinds','hindPaul@mail.com','P@$$w0rd@Yo#an','P@$$w0rd@Yo#an');
 
    });
