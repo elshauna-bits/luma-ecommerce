@@ -7,7 +7,7 @@ describe.skip('Checkout Flow', ()=>{
    //Should login before each it block.
    beforeEach(async()=> {
       await loginPage.open();
-      await loginPage.login('jking@mail.com','P@$$w0rd@Yo#an');
+      await loginPage.login('hindPaul@mail.com','P@$$w0rd@Yo#an');
     });
    xit('should add a product to the cart & purchase', async()=>{
       //Adding Product to Cart
