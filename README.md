@@ -2,7 +2,7 @@
 
 #How to execute
 
-
+Command: npm run test
 
 #The first test to be executed is the signUp.e2e.js. Information for a new user is already in the function. After this test is run add an x to the it block (it should look like this xit) so that the test cannot be executed again. 
 
