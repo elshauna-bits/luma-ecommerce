@@ -8,7 +8,7 @@ describe('Authentication', ()=>{
     });
 
    it('should sign up a new user', async()=>{
-      await signupPage.signUp('Paul','Hinds','hindPaul@mail.com','P@$$w0rd@Yo#an','P@$$w0rd@Yo#an');
+      await signupPage.signUp('Paula','Hinds','paulahinds@mail.com','P@$$w0rd@Yo#an','P@$$w0rd@Yo#an');
 
    });
 
