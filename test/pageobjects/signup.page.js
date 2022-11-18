@@ -1,0 +1,59 @@
+const Page = require('./page');
+
+class SignUpPage extends Page {
+   
+    get firstName () {
+        return $('#firstname');
+    }
+    get lastName ()
+    {
+        return $('#lastname');
+    }
+    get newsletter(){
+        return $('#is_subscribed');
+    }
+    get emailAddress ()
+    {
+        return $('#email_address');
+    }
+    get password(){
+        return $('#password');
+    }
+    get confirmPassword()
+    {
+        return $('#password-confirmation')
+    }
+    get createAccountButton(){
+        return $(`button[title='Create an Account'] span`);
+    }
+    get emailAddressError()
+    {
+        return $('#email_address-error');
+    }
+    async signUp (firstName,lastName,emailAddress,password,confirmPassword) {
+        await this.firstName.setValue(firstName);
+        await this.lastName.setValue(lastName);
+        await this.newsletter.click();
+        await this.emailAddress.setValue(emailAddress);
+        await this.password.setValue(password);
+        await this.confirmPassword.setValue(confirmPassword); 
+        await this.createAccountButton.click();
+        await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account/');
+    }
+    async invalidsignUp (firstName,lastName,emailAddress,password,confirmPassword) {
+        await this.firstName.setValue(firstName);
+        await this.lastName.setValue(lastName);
+        await this.emailAddress.setValue(emailAddress);
+        await this.password.setValue(password);
+        await this.confirmPassword.setValue(confirmPassword); 
+        await this.createAccountButton.click();
+        await expect(this.emailAddressError).toBeExisting();
+    }
+
+
+    open () {
+        return super.open('customer/account/create/');
+    }
+}
+
+module.exports = new SignUpPage();
