@@ -30,6 +30,9 @@ class SignUpPage extends Page {
     {
         return $('#email_address-error');
     }
+    get passwordConfirmationError(){
+        return $('#password-confirmation-error');
+    }
     async signUp (firstName,lastName,emailAddress,password,confirmPassword) {
         await this.firstName.setValue(firstName);
         await this.lastName.setValue(lastName);
@@ -38,7 +41,8 @@ class SignUpPage extends Page {
         await this.password.setValue(password);
         await this.confirmPassword.setValue(confirmPassword); 
         await this.createAccountButton.click();
-        await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account/');
+        
+        
     }
     async invalidsignUp (firstName,lastName,emailAddress,password,confirmPassword) {
         await this.firstName.setValue(firstName);
@@ -47,7 +51,7 @@ class SignUpPage extends Page {
         await this.password.setValue(password);
         await this.confirmPassword.setValue(confirmPassword); 
         await this.createAccountButton.click();
-        await expect(this.emailAddressError).toBeExisting();
+        
     }
 
 
