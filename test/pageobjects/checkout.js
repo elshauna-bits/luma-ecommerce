@@ -6,6 +6,7 @@ class Checkout {
     get shoppingCart(){
         return $("//a[normalize-space()='shopping cart']");
     }
+
     get proceedToCheckout(){
         return $("//button[@data-role='proceed-to-checkout']");
     }
@@ -43,6 +44,9 @@ class Checkout {
     get placeOrderButton(){
         return $("button[title='Place Order']");
     }
+    get purchaseConfirmation(){
+        return $(".page-title");
+    }
     get whatsNew(){
         return $("//a[@id='ui-id-3']");
     }
@@ -76,7 +80,7 @@ class Checkout {
      await this.whatsNew.click();
      await this.recentlyOrderBlock.scrollIntoView();
      await this.viewAll.click();
-     await expect(this.recentOrders).toHaveText(['Recent Orders']);
+     
 
     }
    
