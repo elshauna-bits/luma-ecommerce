@@ -9,3 +9,5 @@ Command: -Signup.e23.js npm run signup
 # Test: Adding a Product to Cart, Purchasing a Product, Verify Purchase in Order History
 Command: npm run checkout
 After creating a new user, head to the checkoutFlow.e2e.js, a product will be added to the cart, purchased and verified. 
+
+Remove the x from the it blocks to execute the tests individually. 
